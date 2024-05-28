@@ -1,0 +1,528 @@
+/*
+	Istruzioni di reset
+*/
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, 
+abbr, acronym, address, big, cite, code, del, 
+dfn, em, img, ins, kbd, q, s, samp, small, 
+strike, strong, sub, sup, tt, var, b, u, i, 
+center, dl, dt, dd, ol, ul, li, fieldset, 
+form, label, legend, table, caption, tbody, 
+tfoot, thead, tr, th, td, article, aside, canvas, 
+details, embed, figure, figcaption, footer, header, 
+hgroup, menu, nav, output, ruby, section, summary, 
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/*
+	Import Dei font nel sito
+*/
+@font-face {
+	font-family: "Crucifixion";
+	src: url(../font/Crucifixion-Regular.ttf);
+}
+@font-face {
+	font-family: "OpenSansLight";
+	src: url(../font/OpenSans-Light.ttf);
+}
+@font-face {
+	font-family: "Atlantis";
+	src: url(../font/Atlantis.ttf);
+}
+@font-face {
+	font-family: "MetalMania";
+	src: url(../font/MetalMania-Regular.ttf);
+}
+@font-face {
+	font-family: "Tattoo";
+	src: url(../font/tattoo.ttf);
+}
+/*
+	Modifiche varie
+*/
+::-webkit-scrollbar {
+    width: 10px;
+	background: #111111;
+}
+::-webkit-scrollbar-thumb {
+    background: #666666;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-corner {
+	color: #111111;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+::selection {
+	background-color: #111111;
+	color: #ffffff;
+}
+/* Modifica del cursore */
+a:hover, button:hover, input[type="submit"]:hover {
+    cursor: url(../cursor/metal.cur), auto;
+}
+
+body:before {
+	content: ' ';
+	background-image: url(../img/body.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+}
+/*
+	Menu e banner iniziale
+*/
+@media screen and (max-width: 980px)
+#header {
+    height: 44px;
+    line-height: 44px;
+}
+#header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background: #111111;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: default;
+    height: 3.25rem;
+    left: 0;
+    line-height: 3.25rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+}
+#header > nav > a:last-child {
+    padding-right: 1.25rem;
+}
+#header > nav > a {
+    color: inherit;
+    display: inline-block;
+    padding: 0 0.75rem;
+    text-decoration: none;
+}
+#header > nav > a:hover {
+    color: #ffffff;
+}
+a {
+    color: #ce1b28;
+    transition: color 0.2s ease-in-out;
+}
+a.active {
+	text-align: center;
+}
+#banner {
+    background-color: #111111;
+    color: rgba(255, 255, 255, 0.5);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-image: url(../img/sfondo_banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: 0;
+    height: 35rem !important;
+    min-height: 35rem;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+#banner > .inner {
+    transform: scale(1.0);
+    transition: opacity 1s ease, transform 1s ease;
+    opacity: 1;
+    position: relative;
+    z-index: 3;
+}
+.inner {
+    margin: 0 auto;
+    width: 90rem;
+    max-width: calc(100% - 6rem);
+}
+#banner h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+	font-family: "MetalMania";
+}
+#banner h1, #banner p {
+    color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #555555;
+}
+#banner p {
+    font-size: 1.5rem;
+}
+p {
+    margin: 0 0 2rem 0;
+}
+#banner:after {
+    background: linear-gradient(135deg, #ce1b28 0%, #111111 74%);
+    content: ' ';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+#menu {
+	background-color: #111111;
+	color: #ffffff;
+	transform: translateX(-20rem);
+	transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+	box-shadow: none;
+	height: 100%;
+	max-width: 80%;
+	overflow-y: auto;
+	padding: 3rem 2rem;
+	position: fixed;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+	width: 20rem;
+	z-index: 10002; 
+}
+#open_menu {
+	color: #ffffff;
+	font-size: 1.25rem;
+}
+#menu a {
+    color: #ce1b28;
+}
+#menu > ul {
+    margin: 0 0 1rem 0;
+}
+#menu > ul.link {
+    list-style: none;
+    padding: 0; 
+}
+#menu > ul.link > li {
+	padding: 0;
+}
+#menu > ul.link > li > a {
+	border: 0;
+	border-top: solid 1px rgba(255, 255, 255, 0.25);
+	color: inherit;
+	display: block;
+	line-height: 3.5rem;
+	text-decoration: none;
+	font-size: 1.25rem;
+}
+#menu > ul.link > li > a:hover {
+	text-transform: uppercase;
+}
+#menu > ul.link > li:first-child > a {
+	border-top: 0; 
+}
+#open_menu:hover {
+	text-transform: uppercase;
+	cursor: pointer;
+}
+body.menu-visibile #menu {
+  transform: translateX(0);
+  box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
+  visibility: visible;
+}
+#cta {
+	background-color: #ce1b28;
+	color: rgba(255, 255, 255, 0.75);
+	background-attachment: fixed;
+	background-image: linear-gradient(rgba(206, 27, 40, 0.25), rgba(206, 27, 40, 0.25)), url(img/separazione1.jpg);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	text-align: center;
+	z-index: 1;
+}
+/*
+	body
+*/
+@media screen and (max-width: 736px)
+.spazio {
+    padding: 3rem 0 1rem 0;
+}
+@media screen and (max-width: 1280px)
+.spazio {
+    padding: 4rem 0 2rem 0;
+}
+.spazio {
+    padding: 8rem 0 6rem 0;
+    position: relative;
+    z-index: 1;
+}
+header.titolo {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+header.titolo p {
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #555555;
+}
+@media screen and (max-width: 736px)
+h2 {
+    font-size: 1.75rem;
+    line-height: 1.5;
+}
+h2 {
+    font-size: 2.25rem;
+    line-height: 1.3;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    line-height: 1.5;
+    text-transform: uppercase;
+    margin: 0 0 1.5rem 0;
+}
+.card {
+    width: 100%;
+    margin: 2.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;    
+	margin-left: 3px;
+    margin-right: 3px;
+}
+.card > :nth-child(3n + 1), .card > :nth-child(3n) {
+    width: calc(33.3333333333% + -0.5rem);
+}
+.card > :nth-child(3n + 1) {
+    padding-left: 0;
+}
+.card > :nth-child(-n + 3) {
+    padding-top: 0;
+}
+.card > * {
+    padding: 1.5rem;
+    width: calc(33.3333333333% + 1rem);
+}
+.card > * {
+    width: 33.3333333333%;
+}
+.card > * {
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+.card .contenitore {
+    background: #ffffff;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.025);
+}
+@media screen and (max-width: 980px)
+.card .contenitore {
+    padding: 2rem;
+}
+.card .contenitore {
+    border-radius: 4px;
+    height: 100%;
+    padding: 3rem;
+    text-align: center;
+}
+a {
+    color: #ce1b28;
+	transition: color 0.2s ease-in-out;
+	text-decoration: underline;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+    line-height: 1.5;
+    text-transform: uppercase;
+    margin: 0 0 1.5rem 0;
+}
+ul {
+    list-style: disc;
+    margin: 0 0 2rem 0;
+    padding-left: 1rem;
+}
+ol, ul {
+    list-style: none;
+}
+input, select, textarea {
+    color: #555555;
+}
+body, input, select, textarea {
+    font-family: "OpenSansLight", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.65; /*Copiato da w3school*/
+}
+input, select {
+    appearance: none;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+input[type="submit"].main, input[type="reset"].main, input[type="button"].main, button.main {
+    box-shadow: none;
+    background-color: #ce1b28;
+    color: #ffffff !important;
+}
+input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #555555;
+    color: #555555 !important;
+}
+input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+    appearance: none;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    height: 3.25rem;
+    line-height: 3.25rem;
+    padding: 0 1.75rem;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+#heading {
+	background-color: #111111;
+	color: rgba(255, 255, 255, 0.5);
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	background-image: linear-gradient(rgba(17, 17, 17, 0.25), rgba(17, 17, 17, 0.25)), url("../img/sfondo_banner.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-top: 0;
+	height: 15rem !important;
+	min-height: 15rem;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+.container {
+	position: relative;
+    text-align: center;
+	display: block;
+}
+.center_1, .center_2, .center_3, .center_4, .center_5, .center_6 {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+	background-color: #222222;
+	width: 250px;
+	line-height:75px;
+	height: 75px;
+	color: #ffffff;
+    transform: translate(-50%, -50%);
+	display: block;
+	opacity: 0;
+	text-transform: uppercase;
+}
+table {
+    margin: 0 0 2rem 0;
+    width: 100%;
+	border-collapse: collapse;
+    border-spacing: 0;
+}
+.spazio_tabella {
+    overflow-x: auto;
+}
+table thead {
+    border-bottom-color: rgba(0, 0, 0, 0.25);
+	border-bottom: solid 2px;
+}
+table tfoot {
+    border-top-color: rgba(0, 0, 0, 0.25);
+	border-top: solid 2px;
+}
+table th {
+    color: #555555;
+}
+table th {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0 0.75rem 0.75rem 0.75rem;
+    text-align: left;
+}
+table tbody tr:nth-child(2n + 1) {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+table tbody tr {
+    border-color: rgba(0, 0, 0, 0.25);
+}
+table tbody tr {
+    border: solid 1px;
+    border-left: 0;
+    border-right: 0;
+}
+table td {
+    padding: 0.75rem 0.75rem;
+}
+
+.row > .col-6 {
+	width: 50%;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.vertical tr td, .vertical tr th {
+	vertical-align: middle;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.vertical tr td img {
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#cursor  tr:hover {
+	cursor: pointer;
+}
+.no-width {
+width: auto;
+}
+.margin_left {
+	margin-left: 2px;
+}
+.margin_right {
+	margin-right: 2px;
+}
+.no-border {
+	border: 0;
+}
+.logo {
+	font-family: "Tattoo";
+	font-size: 72px;
+}

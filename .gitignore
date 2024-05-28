@@ -1,0 +1,9 @@
+
+*.csv
+*.db
+*sql
+*.sqlite
+*.sqlite3
+
+*.jpg
+*.png

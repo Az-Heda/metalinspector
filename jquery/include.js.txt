@@ -1,0 +1,8 @@
+jQuery bisogna includere un file javascript esterno, il file esterno è stato scaricato da:
+
+
+
+				https://code.jquery.com/jquery-3.1.1.js
+
+
+Ho salvato il file e rinominato "include.js"

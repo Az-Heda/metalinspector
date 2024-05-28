@@ -1,0 +1,65 @@
+.filtri {
+	padding-left: 10px;
+	position: absolute;
+	width: 15%;
+	/*border: 1px solid #000000;*/
+	z-index: 4;
+}
+#menu1 {
+	background-color: #111111;
+	color: #000000;
+	transform: translateX(-20rem);
+	transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+	box-shadow: none;
+	height: 100%;
+	max-width: 80%;
+	overflow-y: auto;
+	padding: 3rem 2rem;
+	position: fixed;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+	width: 20rem;
+	z-index: 10002; 
+}
+#open_menu1 {
+	color: #ffffff;
+	font-size: 1.25rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #111111;
+	z-index: 4;
+}
+#menu1 a {
+    color: #ce1b28;
+}
+#menu1 > ul {
+    margin: 0 0 1rem 0;
+}
+#menu1 > ul.link {
+    list-style: none;
+    padding: 0; 
+}
+#menu1 > ul.link > li {
+	padding: 0;
+}
+#menu1 > ul.link > li > a {
+	border: 0;
+	border-top: solid 1px rgba(255, 255, 255, 0.25);
+	color: inherit;
+	display: block;
+	line-height: 3.5rem;
+	text-decoration: none;
+	font-size: 1.25rem;
+}
+#menu1 > ul.link > li:first-child > a {
+	border-top: 0; 
+}
+#open_menu1:hover {
+	cursor: pointer;
+}
+.menu-visibile1 #menu1 {
+  transform: translateX(0);
+  box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
+  visibility: visible;
